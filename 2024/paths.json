@@ -8,12 +8,22 @@
     "completed": false
   },
   {
-    "lang": {
-      "codemirror": "python",
-      "name": "Python"
+    "parts": [{
+      "lang": {
+        "codemirror": "python",
+        "name": "Python"
+      },
+      "path": "2024/day02/src/part01/red-nosedreport.py",
+      "completed": true
     },
-    "path": "2024/day02/src/day02.py",
-    "completed": false
+    {
+      "lang": {
+        "codemirror": "python",
+        "name": "Python"
+      },
+      "path": "2024/day02/src/part02/red-nosedreport.py",
+      "completed": true
+    }]
   },
   {
     "parts": [{
