@@ -1,5 +1,4 @@
 import functools
-from test import safe_removal
 
 with open("aoc/2024/day02/resources/data.txt", "r") as file:
     data = file.read()
