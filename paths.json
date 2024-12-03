@@ -1,0 +1,36 @@
+[
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "day01/src/day01.py",
+    "completed": false
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2024/day03/src/day02.py",
+    "completed": false
+  },
+  {
+    "parts": [{
+      "lang": {
+        "codemirror": "python",
+        "name": "Python"
+      },
+      "path": "2024/day03/src/part01/mullitover.py",
+      "completed": true
+    },
+    {
+      "lang": {
+        "codemirror": "python",
+        "name": "Python"
+      },
+      "path": "2024/day03/src/part02/mullitover.py",
+      "completed": true
+    }]
+  }
+]
