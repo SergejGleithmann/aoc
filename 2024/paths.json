@@ -13,7 +13,7 @@
         "codemirror": "python",
         "name": "Python"
       },
-      "path": "2024/day02/src/part01/red-nosedreport.py",
+      "path": "2024/day02/src/part01/red-nosedreports.py",
       "completed": true
     },
     {
@@ -21,7 +21,7 @@
         "codemirror": "python",
         "name": "Python"
       },
-      "path": "2024/day02/src/part02/red-nosedreport.py",
+      "path": "2024/day02/src/part02/red-nosedreports.py",
       "completed": true
     }]
   },
