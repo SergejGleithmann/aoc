@@ -1,11 +1,21 @@
 [
   {
-    "lang": {
-      "codemirror": "python",
-      "name": "Python"
+    "parts": [{
+      "lang": {
+        "codemirror": "python",
+        "name": "Python"
+      },
+      "path": "2024/day01/src/part01/historianhysteria.py",
+      "completed": true
     },
-    "path": "2024/day01/src/day01.py",
-    "completed": false
+    {
+      "lang": {
+        "codemirror": "python",
+        "name": "Typed Python"
+      },
+      "path": "2024/day01/src/part02/historianhysteria.py",
+      "completed": true
+    }]
   },
   {
     "parts": [{
