@@ -11,7 +11,7 @@
     {
       "lang": {
         "codemirror": "python",
-        "name": "Typed Python"
+        "name": "Python"
       },
       "path": "2024/day01/src/part02/historianhysteria.py",
       "completed": true
@@ -50,6 +50,24 @@
         "name": "Python"
       },
       "path": "2024/day03/src/part02/mullitover.py",
+      "completed": true
+    }]
+  },
+  {
+    "parts": [{
+      "lang": {
+        "codemirror": "python",
+        "name": "Python"
+      },
+      "path": "2024/day04/src/part01/ceressearch.py",
+      "completed": true
+    },
+    {
+      "lang": {
+        "codemirror": "python",
+        "name": "Python"
+      },
+      "path": "2024/day04/src/part02/ceressearch.py",
       "completed": true
     }]
   }
