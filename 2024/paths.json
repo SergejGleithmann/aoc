@@ -70,5 +70,23 @@
       "path": "2024/day04/src/part02/ceressearch.py",
       "completed": true
     }]
+  },
+  {
+    "parts": [{
+      "lang": {
+        "codemirror": "python",
+        "name": "Python"
+      },
+      "path": "2024/day05/src/part01/printqueue.py",
+      "completed": true
+    },
+    {
+      "lang": {
+        "codemirror": "python",
+        "name": "Python"
+      },
+      "path": "2024/day05/src/part02/printqueue.py",
+      "completed": true
+    }]
   }
 ]
