@@ -88,5 +88,23 @@
       "path": "2024/day05/src/part02/printqueue.py",
       "completed": true
     }]
+  },
+  {
+    "parts": [{
+      "lang": {
+        "codemirror": "python",
+        "name": "Python"
+      },
+      "path": "2024/day06/src/part01/guardgullivant.py",
+      "completed": true
+    },
+    {
+      "lang": {
+        "codemirror": "python",
+        "name": "Python"
+      },
+      "path": "2024/day06/src/part02/guardgullivant.py",
+      "completed": true
+    }]
   }
 ]
