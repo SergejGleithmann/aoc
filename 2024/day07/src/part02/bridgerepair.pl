@@ -17,10 +17,10 @@ read_lines(Stream, [ParsedLine|Rest]) :-
     read_lines(Stream, Rest). % Recurse for the next line
 
 split_and_parse(Line, [ParsedResult, ParsedNumbers]) :-
-    re_split(": ", Line, [StringResult, _, StringNumbers]), % Split at ": " and trim spaces
-    number_string(ParsedResult, StringResult),                  % Convert the first part to a number
+    re_split(": ", Line, [StringResult, _, StringNumbers]),
+    number_string(ParsedResult, StringResult),  % Convert result to a number
     split_string(StringNumbers, " ", "", SplitStringNumbers),
-    maplist(number_string, ParsedNumbers, SplitStringNumbers).       % Convert the rest to numbers
+    maplist(number_string, ParsedNumbers, SplitStringNumbers).  % Convert the rest to numbers
 
 count_if([], 0).
 count_if([[Result,Args]|Lines], Sum) :-
@@ -29,6 +29,12 @@ count_if([[Result,Args]|Lines], Sum) :-
         Sum is SumRest + Result
     ;   count_if(Lines, Sum)  % If false, no addition
     ).
+
+concat_numbers(N1, N2, Result) :-
+    number_string(N1, S1),        % Convert the first number to a string
+    number_string(N2, S2),        % Convert the second number to a string
+    string_concat(S1, S2, SResult), % Concatenate the strings
+    number_string(Result, SResult). % Convert the concatenated string back to a number
 
 % use the first Arg as startvalue for accumulator
 check_calc(Result, [Arg|Args]):-
@@ -39,4 +45,6 @@ check_calc(TargetResult, CurrentResult, [Arg|Rest]):-
     Sum is CurrentResult + Arg, % Evaluate the sum
     check_calc(TargetResult, Sum, Rest);
     Prod is CurrentResult * Arg, % Evaluate the sum
-    check_calc(TargetResult, Prod, Rest).
+    check_calc(TargetResult, Prod, Rest);
+    concat_numbers(CurrentResult,Arg,Conc),
+    check_calc(TargetResult, Conc, Rest).

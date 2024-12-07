@@ -118,11 +118,11 @@
     },
     {
       "lang": {
-        "codemirror": "python",
-        "name": "Python"
+        "codemirror": "prolog",
+        "name": "Prolog"
       },
       "path": "2024/day07/src/part02/bridgerepair.pl",
-      "completed": false
+      "completed": true
     }]
   }
 ]
