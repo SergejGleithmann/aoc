@@ -106,5 +106,23 @@
       "path": "2024/day06/src/part02/guardgallivant.py",
       "completed": true
     }]
+  },
+  {
+    "parts": [{
+      "lang": {
+        "codemirror": "prolog",
+        "name": "Prolog"
+      },
+      "path": "2024/day06/src/part01/bridgerepair.pl",
+      "completed": true
+    },
+    {
+      "lang": {
+        "codemirror": "python",
+        "name": "Python"
+      },
+      "path": "2024/day06/src/part02/bridgerepair.pl",
+      "completed": false
+    }]
   }
 ]
