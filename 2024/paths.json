@@ -113,7 +113,7 @@
         "codemirror": "prolog",
         "name": "Prolog"
       },
-      "path": "2024/day06/src/part01/bridgerepair.pl",
+      "path": "2024/day07/src/part01/bridgerepair.pl",
       "completed": true
     },
     {
@@ -121,7 +121,7 @@
         "codemirror": "python",
         "name": "Python"
       },
-      "path": "2024/day06/src/part02/bridgerepair.pl",
+      "path": "2024/day07/src/part02/bridgerepair.pl",
       "completed": false
     }]
   }
