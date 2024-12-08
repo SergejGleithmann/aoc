@@ -124,5 +124,13 @@
       "path": "2024/day07/src/part02/bridgerepair.pl",
       "completed": true
     }]
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2024/day08/src/resonantcollinearity.py",
+    "completed": true
   }
 ]
