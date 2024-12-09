@@ -132,5 +132,13 @@
     },
     "path": "2024/day08/src/resonantcollinearity.py",
     "completed": true
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2024/day09/src/diskfragmenter.py",
+    "completed": true
   }
 ]
