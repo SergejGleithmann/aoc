@@ -140,5 +140,13 @@
     },
     "path": "2024/day09/src/diskfragmenter.py",
     "completed": true
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2024/day10/src/hoofit.py",
+    "completed": true
   }
 ]

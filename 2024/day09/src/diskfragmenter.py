@@ -1,4 +1,5 @@
-from typing import List, Tuple
+import time
+from typing import Any, Callable, List, Tuple
 
 
 with open("aoc/2024/day09/resources/data.txt", "r") as file:
@@ -6,6 +7,17 @@ with open("aoc/2024/day09/resources/data.txt", "r") as file:
 
 record = [int(d) for d in data if d != "\n"]
 # print(data)
+
+
+def stoptime(f: Callable[..., Any], args: Any) -> Any:
+    t1 = time.time()
+    res = f(args)
+    t2 = time.time()
+    print(f"Duration: {t2-t1:.2f} seconds")
+    return res
+
+
+##### Variant1: Extend then compact
 
 
 def extend(record: List[int]) -> List[int | None]:
@@ -59,6 +71,7 @@ def get_previous_file(record: List[int | None], index: int) -> Tuple[int, int | 
     return start_index, index
 
 
+# Very slow - check Variant two for better runtime
 def compact_filewise(record: List[int | None]) -> List[int | None]:
     sf = len(record)
     while True:
@@ -82,36 +95,22 @@ def compact_filewise(record: List[int | None]) -> List[int | None]:
     return record
 
 
-def compact_filewise_unextended(record: List[int | None]) -> List[int | None]:
-    file_index = ((len(record) - 1) // 2) * 2
-    while file_index > 0:
-        for space_index in range(1, 2, file_index):
-            space = record[space_index]
-            file_size = record[file_index]
-            if file_size <= space:
-                record[space_index:space_index] = [
-                    0,
-                    file_size,
-                    space_index - file_size,
-                ]
-                record[file_index - 1 : file_index + 2] = [
-                    record[file_index - 1] + file_size + record[file_index + 1]
-                ]
-        file_index -= 2
-    return record
-
-
 def checksum(record: List[int | None]) -> int:
     return sum([idx * value for idx, value in enumerate(record) if value != None])
 
 
 # print(extend([2, 3, 3, 3, 1, 3, 3, 1, 2, 1, 4, 1, 4, 1, 3, 1, 4, 0, 2]))
 # print(compact(extend([2, 3, 3, 3, 1, 3, 3, 1, 2, 1, 4, 1, 4, 1, 3, 1, 4, 0, 2])))
-# print(
-#    checksum(compact(extend([2, 3, 3, 3, 1, 3, 3, 1, 2, 1, 4, 1, 4, 1, 3, 1, 4, 0, 2])))
-# )
+print(
+    checksum(
+        compact_filewise(
+            extend([2, 3, 3, 3, 1, 3, 3, 1, 2, 1, 4, 1, 4, 1, 3, 1, 4, 0, 2])
+        )
+    )
+)
 
-# print(checksum(compact_blockwise(extend(record))))
+print(checksum(compact_blockwise(extend(record))))
+# print(checksum(compact_filewise(extend(record)))) # 6272188244509
 # print(checksum(extend(compact_filewise_unextended(record))))
 """ test = extend([2, 3, 3, 3, 1, 3, 3, 1, 2, 1, 4, 1, 4, 1, 3, 1, 4, 0, 2])
 print("Ext", test, len(test))
@@ -127,5 +126,64 @@ print(
     )
 ) """
 
+##### Variant 2 for Part 2: compact then extend | NOT YET WORKING
 
-print(checksum(compact_filewise(extend(record))))
+df = enumerate(data)
+
+
+def compact_filewise_2(data: str) -> List[Tuple[int, int]]:
+    record = [
+        ((-1 if i % 2 == 1 else i // 2), int(data[i]))
+        for i in range(len(data))
+        if data[i] != "\n"
+    ]
+    f_pos = len(record) // 2 * 2
+    while f_pos > 0:
+        id, f_length = record[f_pos]
+        for s_pos in range(1, f_pos, 2):
+            # print(f_pos, s_pos, id)
+            _, s_length = record[s_pos]
+            if f_length <= s_length:
+                record[f_pos - 1 : f_pos + 2] = [
+                    (
+                        -1,
+                        (
+                            f_length
+                            + record[f_pos - 1][1]
+                            + (record[f_pos + 1][1] if f_pos + 1 < len(record) else 0)
+                        ),
+                    )
+                ]
+                record[s_pos : s_pos + 1] = [
+                    (-1, 0),
+                    (id, f_length),
+                    (-1, s_length - f_length),
+                ]
+                """ print(
+                    "".join(
+                        [
+                            ("." if id == -1 else str(id)) * length
+                            for id, length in record
+                        ]
+                    )
+                ) """
+
+                break
+        f_pos -= 2
+    return record
+
+
+def checksum_2(record: List[Tuple[int, int]]) -> int:
+    res = 0
+    pos = 0
+    for i in range(len(record)):
+        id, length = record[i]
+        if id >= 0:
+            res += ((pos * length) + (length * (length - 1)) // 2) * id
+        pos += length
+    return res
+
+
+# print(compact_filewise_2("2333133121414131402"))
+print(checksum_2(compact_filewise_2("2333133121414131402")))
+print(checksum_2(compact_filewise_2(data)))
