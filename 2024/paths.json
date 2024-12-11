@@ -148,5 +148,13 @@
     },
     "path": "2024/day10/src/hoofit.py",
     "completed": true
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2024/day11/src/plutonianpebbles.py",
+    "completed": true
   }
 ]
