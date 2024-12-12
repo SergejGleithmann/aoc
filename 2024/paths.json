@@ -156,5 +156,13 @@
     },
     "path": "2024/day11/src/plutonianpebbles.py",
     "completed": true
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2024/day12/src/gardengroups.py",
+    "completed": true
   }
 ]
