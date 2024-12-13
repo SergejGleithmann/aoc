@@ -164,5 +164,13 @@
     },
     "path": "2024/day12/src/gardengroups.py",
     "completed": true
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2024/day13/src/clawcontraption.py",
+    "completed": true
   }
 ]
