@@ -1,3 +1,7 @@
+import sys, os
+
+sys.path.append(os.getcwd())
+print(sys.path)
 import asyncio
 from typing import List, Self
 import numpy as np
@@ -6,8 +10,9 @@ from batgrl.colors import Color
 from batgrl.gadgets.scroll_view import ScrollView
 from batgrl.gadgets.slider import Slider
 from batgrl.gadgets.tabs import Tabs
-from aoc_utils.theme import AOC_THEME, AocButton, AocText
-from aoc_utils.two_d import Point, Map
+from aoc.aoc_utils.theme import AOC_THEME, AocButton, AocText
+from aoc.aoc_utils.two_d import Point, Map
+
 
 BROWN = Color.from_hex("44361e")
 YELLOW = Color.from_hex("e5da0d")
@@ -18,6 +23,10 @@ DIRS = {
     "<": Point((-1, 0)),
     "^": Point((0, -1)),
 }
+
+
+class Map(np.ndarray[str]):
+    pass
 
 
 with open("aoc/2024/day15/resources/data.txt", "r") as file:
@@ -251,14 +260,14 @@ class WarehouseWoesApp(App):
             alpha=0,
             pos_hint={"x_hint": 1.0, "anchor": "right"},
         )
-        warehouse_2 = AocText(size=WAREHOUSE_2.shape)
-        warehouse_2.canvas["char"] = WAREHOUSE_2
+        map_l = AocText(size=map.shape)
+        map_l.canvas["char"] = map_l
         sv2 = ScrollView(
             pos=(1, 0),
             size_hint={"height_hint": 1.0, "height_offset": -1, "width_hint": 1.0},
             dynamic_bars=True,
         )
-        sv2.view = warehouse_2
+        sv2.view = map_l
         container_2 = AocText(size_hint={"height_hint": 1.0, "width_hint": 1.0})
         container_2.add_gadgets(start_2, stop_2, slider_label_2, slider_2, sv2)
 
@@ -315,14 +324,14 @@ class WarehouseWoesApp(App):
 
         async def do_part_two():
             current_pos = Vec2(START.y, 2 * START.x)
-            wh = warehouse_2.canvas["char"]
+            wh = map_l.canvas["char"]
             for instruction in INSTRUCTIONS:
                 container_2.canvas["char"][0, 29:] = container_2.canvas["char"][
                     0, 28:-1
                 ]
                 container_2.canvas["char"][0, 28] = instruction
                 direction = DIRS[instruction]
-                warehouse_2.canvas["char"][current_pos] = "."
+                map_l.canvas["char"][current_pos] = "."
                 new_pos = current_pos + direction
                 if wh[new_pos] == ".":
                     current_pos = new_pos
@@ -343,9 +352,9 @@ class WarehouseWoesApp(App):
                     do_vertical_push(new_pos, direction, wh)
                     current_pos = new_pos
 
-                recolor_foreground(warehouse_2)
-                warehouse_2.canvas["char"][current_pos] = "@"
-                warehouse_2.canvas["fg_color"][current_pos] = YELLOW
+                recolor_foreground(map_l)
+                map_l.canvas["char"][current_pos] = "@"
+                map_l.canvas["fg_color"][current_pos] = YELLOW
                 await part_2_event.wait()
                 await asyncio.sleep(delay_2)
 
