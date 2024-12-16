@@ -188,5 +188,13 @@
     },
     "path": "2024/day15/src/warehousewoes.py",
     "completed": true
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2024/day16/src/reindeermaze.py",
+    "completed": true
   }
 ]
