@@ -196,5 +196,13 @@
     },
     "path": "2024/day16/src/reindeermaze.py",
     "completed": true
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2024/day17/src/chronospatialcomputer.py",
+    "completed": true
   }
 ]
