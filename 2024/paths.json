@@ -212,5 +212,21 @@
     },
     "path": "2024/day18/src/ramrun.py",
     "completed": true
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2024/day19/src/linelayout.py",
+    "completed": true
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2024/day20/src/racecondition.py",
+    "completed": true
   }
 ]
