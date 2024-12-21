@@ -227,6 +227,14 @@
       "name": "Python"
     },
     "path": "2024/day20/src/racecondition.py",
-    "completed": true
+    "completed": false
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2024/day21/src/keyboardconundrum.py",
+    "completed": false
   }
 ]
