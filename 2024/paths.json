@@ -236,5 +236,13 @@
     },
     "path": "2024/day21/src/keyboardconundrum.py",
     "completed": false
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2024/day22/src/monkeymarket.py",
+    "completed": true
   }
 ]
