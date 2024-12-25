@@ -250,7 +250,23 @@
       "codemirror": "python",
       "name": "Python"
     },
-    "path": "2024/day23/src/monkeymarket.py",
+    "path": "2024/day23/src/lanparty.py",
+    "completed": true
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2024/day24/src/crossedwires.py",
+    "completed": true
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2024/day25/src/codechronicle.py",
     "completed": true
   }
 ]
