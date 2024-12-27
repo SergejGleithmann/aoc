@@ -3,7 +3,7 @@ import re
 from typing import Dict, List, Tuple
 
 
-with open("aoc/2023/day02/resources/data.txt", "r") as file:
+with open("aoc/2023/day02/data.txt", "r") as file:
     data = file.readlines()
 
 type Set = Dict[str, int]

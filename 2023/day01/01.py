@@ -1,7 +1,7 @@
 import re
 
 
-with open("aoc/2023/day01/resources/data.txt", "r") as file:
+with open("aoc/2023/day01/data.txt", "r") as file:
     data = file.readlines()
 
 
