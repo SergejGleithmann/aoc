@@ -1,10 +1,10 @@
 [
   {
     "lang": {
-      "codemirror": "python",
-      "name": "Python"
+      "codemirror": "r",
+      "name": "R"
     },
-    "path": "2025/day01/src/secretentrance.py",
+    "path": "2025/day01/src/secretentrance.r",
     "completed": true
   }
 ]
