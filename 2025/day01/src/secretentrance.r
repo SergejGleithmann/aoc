@@ -20,9 +20,6 @@ df <- df %>%
   mutate(folded.mod = accumulate(value, ~ (.x + .y) %% 100, .init = 50)[-1]) %>%
   mutate(folded.div = abs(((folded - value) %% 100 + value) %/% 100))
 
-print(sum(df$folded.mod == 0))
-print(sum(df$folded.div))
-
 print(
     df %>% summarise(
         total.zerosa = sum(folded.mod == 0), 
