@@ -6,5 +6,13 @@
     },
     "path": "2025/day01/src/secretentrance.r",
     "completed": true
+  },
+  {
+    "lang": {
+      "codemirror": "clojure",
+      "name": "Clojure"
+    },
+    "path": "2025/day02/src/giftshop.clj",
+    "completed": true
   }
 ]
