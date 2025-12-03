@@ -28,7 +28,7 @@
   (apply = (split-half (str x))))
 
 (defn illegal-b? [x]
-  (reduce #(or %1 %2) false (map #(apply = %) (split-all (str x)))))
+  (some true? (map #(apply = %) (split-all (str x)))))
 
 
 (reduce + (filter illegal-a? parsed-data))

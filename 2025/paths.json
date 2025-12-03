@@ -14,5 +14,13 @@
     },
     "path": "2025/day02/src/giftshop.clj",
     "completed": true
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2025/day03/src/lobby.py",
+    "completed": true
   }
 ]
