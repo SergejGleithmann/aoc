@@ -1,3 +1,8 @@
+import time
+import os
+from typing import Callable, TypeVar, Generic
+
+
 with open("aoc/2025/day04/resources/input.txt", "r") as file:
     data = file.read()
 
@@ -5,7 +10,9 @@ with open("aoc/2025/day04/resources/input.txt", "r") as file:
 with open("aoc/2025/day04/resources/test.txt", "r") as file:
     test = file.read()
 
-from typing import Callable, TypeVar, Generic
+
+clear = lambda: os.system("cls")
+
 
 T = TypeVar("T")
 
@@ -75,7 +82,7 @@ def pprint(field: list[list[T]]) -> None:
     Args:
         field (list[list[T]]): 2 dimensional list
     """
-    "\n".join(map(lambda x: "".join(x), [map(str, line) for line in field]))
+    print("\n".join(map(lambda x: "".join(x), [map(str, line) for line in field])))
 
 
 def update_field(
@@ -96,19 +103,25 @@ def update_field(
     return field
 
 
-def iterative_removal(field: list[list[T]]) -> int:
+def iterative_removal(field: list[list[T]], visual: bool = False) -> int:
     """Removes accessible papers until no accessible papers are left and returns the number of removed papers
 
     Args:
-        field (list[list[T]]): 2 d arrey
+        field (list[list[T]]): 2 d array
+        visual (bool): Whether visual output should be printed to console. Defaults to False.
 
     Returns:
         int: number of removed items
     """
+    if visual:
+        clear()
+        pprint(field)
+        time.sleep(0.2)
+
     accessible = [x for x in access(field) if x[0] < 4]
     if len(accessible) > 0:
         return len(accessible) + iterative_removal(
-            update_field(field, accessible),
+            update_field(field, accessible), visual=visual
         )
     else:
         return 0
@@ -118,4 +131,5 @@ print(len([x for x, i, j in access(parse(test)) if x < 4]))
 print(len([x for x, i, j in access(parse(data)) if x < 4]))
 
 print(iterative_removal(parse(test)))
-print(iterative_removal(parse(data)))
+print("letsgo")
+print(iterative_removal(parse(data), visual=True))
