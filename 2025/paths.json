@@ -30,5 +30,12 @@
     },
     "path": "2025/day04/src/printingdep.py",
     "completed": true
+  },{
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2025/day05/src/cafeteria.py",
+    "completed": true
   }
 ]

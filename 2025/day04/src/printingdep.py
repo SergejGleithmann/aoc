@@ -131,5 +131,4 @@ print(len([x for x, i, j in access(parse(test)) if x < 4]))
 print(len([x for x, i, j in access(parse(data)) if x < 4]))
 
 print(iterative_removal(parse(test)))
-print("letsgo")
-print(iterative_removal(parse(data), visual=True))
+print(iterative_removal(parse(data), visual=False))
