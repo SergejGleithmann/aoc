@@ -37,5 +37,13 @@
     },
     "path": "2025/day05/src/cafeteria.py",
     "completed": true
+  },
+  {
+    "lang": {
+      "codemirror": "clojure",
+      "name": "Clojure"
+    },
+    "path": "2025/day06/src/trashcompactor.clj",
+    "completed": true
   }
 ]
