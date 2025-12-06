@@ -21,13 +21,12 @@
   (map apply fs args))
 
 (defn split-at-pred [pred coll]
-  (if (empty? coll)
-    coll
+  (when (seq coll)
     (let [[valid rest] (split-with (complement pred) coll)
           todo (drop-while pred rest)]
       (cons valid (split-at-pred pred todo)))))
 
-(defn parse-input-2 [path]
+(defn parse-input-vertical [path]
   (let [raw (->
              path
              slurp
@@ -38,28 +37,19 @@
               butlast
               (map #(str/split % #""))
               (apply map vector)
-              (map #(apply str %))
+              (map str/join)
               (map str/trim)
               (map parse-long)
               (split-at-pred nil?))]
     [ops nums]))
 
-(->> "../aoc/2025/day06/resources/test.txt"
-     parse-input
-     calc
-     (reduce +))
+(defn sum-file [parser calc-fn path]
+  (->> path
+       parser
+       calc-fn
+       (reduce +)))
 
-(->> "../aoc/2025/day06/resources/input.txt"
-     parse-input
-     calc
-     (reduce +))
-
-(->> "../aoc/2025/day06/resources/test.txt"
-     parse-input-2
-     calc-2
-     (reduce +))
-
-(->> "../aoc/2025/day06/resources/input.txt"
-     parse-input-2
-     calc-2
-     (reduce +))
+(sum-file parse-input calc "../aoc/2025/day06/resources/test.txt")
+(sum-file parse-input calc "../aoc/2025/day06/resources/input.txt")
+(sum-file parse-input-vertical calc-2 "../aoc/2025/day06/resources/test.txt")
+(sum-file parse-input-vertical calc-2 "../aoc/2025/day06/resources/input.txt")
