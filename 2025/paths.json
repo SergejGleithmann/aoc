@@ -45,5 +45,13 @@
     },
     "path": "2025/day06/src/trashcompactor.clj",
     "completed": true
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2025/day07/src/laboratories.py",
+    "completed": true
   }
 ]
