@@ -36,16 +36,14 @@
 
 (defn until-connect-all [n components paths]
   ;; returns the path that results in a fully connected graph.
-  (loop [components components
-         paths paths]
-    (if (empty? paths)
-      components
-      (let [new-path (set (first paths))
-            {non-occs true occs false} (group-by #(empty? (set/intersection new-path %)) components)
-            new-components (cons (apply set/union (cons new-path occs)) non-occs)]
-        (if (= n (count (first new-components)))
-          new-path
-          (recur new-components (rest paths)))))))
+  (if (empty? paths)
+    components
+    (let [new-path (set (first paths))
+          {non-occs true occs false} (group-by #(empty? (set/intersection new-path %)) components)
+          new-components (cons (apply set/union (cons new-path occs)) non-occs)]
+      (if (= n (count (first new-components)))
+        new-path
+        (recur n new-components (rest paths))))))
 
 
 (defn count-connected-components [comps]
