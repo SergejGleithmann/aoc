@@ -53,5 +53,13 @@
     },
     "path": "2025/day07/src/laboratories.py",
     "completed": true
+  },
+  {
+    "lang": {
+      "codemirror": "clojure",
+      "name": "Clojure"
+    },
+    "path": "2025/day08/src/playground.clj",
+    "completed": true
   }
 ]
