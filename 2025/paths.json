@@ -61,5 +61,23 @@
     },
     "path": "2025/day08/src/playground.clj",
     "completed": true
+  },
+  {
+    "parts": [{
+      "lang": {
+        "codemirror": "prolog",
+        "name": "Prolog"
+      },
+      "path": "2025/day09/src/movietheater.pl",
+      "completed": true
+    },
+    {
+      "lang": {
+        "codemirror": "python",
+        "name": "Python"
+      },
+      "path": "2025/day09/src/movietheater.py",
+      "completed": true
+    }]
   }
 ]
