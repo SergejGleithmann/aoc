@@ -79,5 +79,13 @@
       "path": "2025/day09/src/movietheater.py",
       "completed": true
     }]
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2025/day10/src/factory.py",
+    "completed": true
   }
 ]
