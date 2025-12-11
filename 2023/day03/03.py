@@ -17,10 +17,13 @@ def valid(v):
 
 
 def get(df, i, j):
-    try:
-        return df[i][j]
-    except IndexError:
+    if i < 0 or j < 0:
         return "."
+    else:
+        try:
+            return df[i][j]
+        except IndexError:
+            return "."
 
 
 def check_adj(df, row, start, end):
