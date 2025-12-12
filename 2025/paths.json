@@ -95,5 +95,13 @@
     },
     "path": "2025/day11/src/reactor.py",
     "completed": true
+  },
+  {
+    "lang": {
+      "codemirror": "python",
+      "name": "Python"
+    },
+    "path": "2025/day12/src/ctf.py",
+    "completed": true
   }
 ]
